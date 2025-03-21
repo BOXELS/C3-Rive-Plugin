@@ -1,57 +1,64 @@
-# Rive Animation Addon for Construct 3
+# Rive Animation Plugin for Construct 3
 
-This addon allows you to easily add Rive animations to your Construct 3 projects. Rive is a powerful tool for creating interactive animations that can be used in games and applications.
+A plugin that enables Rive animations to be used in Construct 3 projects.
 
-## Features
+## Current Status
 
-- Easy integration of .riv files
-- Play, pause, and stop animations
-- Auto-play option
-- Loop control
-- Check animation state
-- Get current animation time
+This plugin is currently in development and facing some initialization issues in the editor.
 
-## Installation
+### Current Issues
 
-1. Download the addon files
-2. In Construct 3, go to the Project Properties
-3. Click on "Addons"
-4. Click "Add Addon"
-5. Select the downloaded addon files
+1. Editor Instance Initialization Error:
+```
+Error: unexpected type @ TypeError: unexpected type at Q.i
+```
+The error occurs when trying to create a new instance of the plugin in the Construct 3 editor.
 
-## Usage
+## Project Structure
 
-1. Add a Rive Animation object to your project
-2. In the Properties panel, select your .riv file
-3. Configure the animation settings:
-   - AutoPlay: Automatically start the animation when loaded
-   - Loop: Enable/disable animation looping
+- `addon.js` - Main plugin code for the editor
+- `c3runtime/runtime.js` - Runtime implementation
+- `type.json` - Plugin type definition
+- `aces.json` - Actions, conditions, and expressions
+- `lang/en-US.json` - Language strings
 
-## Actions
+## How to Help
 
-- **Play**: Start playing the animation
-- **Pause**: Pause the current animation
-- **Stop**: Stop the animation and reset to the beginning
+If you're familiar with Construct 3 plugin development, we need help with:
 
-## Conditions
+1. Fixing the instance initialization error in the editor
+2. Properly implementing the world instance functionality
+3. Implementing Rive animation loading and playback
 
-- **IsPlaying**: Check if the animation is currently playing
+### Development Setup
 
-## Expressions
+1. Clone this repository
+2. Create a new folder in your Construct plugins directory
+3. Copy the files into the plugin folder
+4. Restart Construct 3
+5. The plugin should appear in the "Add New Object" dialog under "Other"
 
-- **CurrentTime**: Get the current time of the animation
+### Testing
 
-## Requirements
+To test changes:
+1. Make your modifications
+2. Zip the contents into a .c3addon file
+3. Remove the existing plugin from Construct 3
+4. Install the new .c3addon file
+5. Test by adding the object to a layout
 
-- Construct 3
-- A valid .riv file exported from Rive
+## Contributing
 
-## Notes
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
 
-- Make sure your .riv file is properly exported from Rive
-- The animation will automatically scale to fit the object's size in Construct 3
-- Performance may vary depending on the complexity of your Rive animation
+## License
 
-## Support
+[Your chosen license]
 
-For issues or questions, please create an issue in the repository. 
+## Contact
+
+[Your contact information if you want to provide it] 
