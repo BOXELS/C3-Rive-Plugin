@@ -1,0 +1,128 @@
+"use strict";
+
+{
+    const PLUGIN_ID = "riveanimation";
+    const PLUGIN_CATEGORY = "other";
+    
+    const PLUGIN_CLASS = class RiveAnimationPlugin extends SDK.IPluginBase {
+        constructor() {
+            super(PLUGIN_ID);
+            SDK.Lang.PushContext("plugins." + PLUGIN_ID);
+            
+            this._info.SetName(SDK.Lang.Get(".name"));
+            this._info.SetDescription(SDK.Lang.Get(".description"));
+            this._info.SetVersion("1.0.0");
+            this._info.SetCategory(PLUGIN_CATEGORY);
+            this._info.SetAuthor("BOXELS");
+            this._info.SetHelpUrl(SDK.Lang.Get(".help-url"));
+            this._info.SetIsSingleGlobal(false);
+            this._info.SetIs3D(false);
+            this._info.SetSupportsEffects(false);
+            this._info.SetCanBeBundled(true);
+            
+            this._info.SetProperties([
+                new SDK.PluginProperty("text", "rive-file", {
+                    initialValue: "",
+                    name: SDK.Lang.Get("properties.rive-file.name"),
+                    description: SDK.Lang.Get("properties.rive-file.desc")
+                }),
+                new SDK.PluginProperty("combo", "autoplay", {
+                    initialValue: "Yes",
+                    items: ["Yes", "No"],
+                    name: SDK.Lang.Get("properties.autoplay.name"),
+                    description: SDK.Lang.Get("properties.autoplay.desc")
+                }),
+                new SDK.PluginProperty("combo", "loop", {
+                    initialValue: "Yes",
+                    items: ["Yes", "No"],
+                    name: SDK.Lang.Get("properties.loop.name"),
+                    description: SDK.Lang.Get("properties.loop.desc")
+                })
+            ]);
+            
+            SDK.Lang.PopContext();
+        }
+    };
+    
+    SDK.Plugins.RiveAnimation = PLUGIN_CLASS;
+
+    PLUGIN_CLASS.Type = class RiveAnimationType extends SDK.ITypeBase {
+        constructor(sdkPlugin, iObjectType) {
+            super(sdkPlugin, iObjectType);
+        }
+    };
+
+    PLUGIN_CLASS.Instance = class RiveAnimationInstance extends SDK.IInstanceBase {
+        constructor(sdkType, inst) {
+            super(sdkType, inst);
+            
+            // Default to 200x200 size if no size set
+            const size = this._inst.GetWorldInfo().GetSize();
+            if (size[0] === 0 && size[1] === 0) {
+                this._inst.GetWorldInfo().SetSize(200, 200);
+            }
+        }
+
+        Release() {
+            super.Release();
+        }
+
+        OnCreate() {
+            // Editor-specific initialization if needed
+        }
+
+        Draw(renderer) {
+            const quad = this._inst.GetWorldInfo().GetBoundingQuad();
+            renderer.Outline(quad, [1, 1, 1]);
+        }
+
+        OnPropertyChanged(id, value) {
+            // Handle property changes in the editor
+            switch (id) {
+                case "rive-file":
+                    // Handle Rive file change
+                    break;
+                case "autoplay":
+                    // Handle autoplay change
+                    break;
+                case "loop":
+                    // Handle loop change
+                    break;
+            }
+        }
+
+        GetDebuggerProperties() {
+            return [{
+                title: "RIVE Animation",
+                properties: [
+                    { name: "Rive File", value: this._inst.GetPropertyValue("rive-file") },
+                    { name: "Auto Play", value: this._inst.GetPropertyValue("autoplay") },
+                    { name: "Loop Animation", value: this._inst.GetPropertyValue("loop") }
+                ]
+            }];
+        }
+    };
+    
+    // Actions
+    SDK.Plugins.RiveAnimation.Acts = {
+        Play() {},
+        Pause() {},
+        Stop() {}
+    };
+    
+    // Conditions
+    SDK.Plugins.RiveAnimation.Cnds = {
+        IsPlaying() {
+            return false; // Editor-only implementation
+        }
+    };
+    
+    // Expressions
+    SDK.Plugins.RiveAnimation.Exps = {
+        CurrentTime() {
+            return 0; // Editor-only implementation
+        }
+    };
+
+    PLUGIN_CLASS.Register(PLUGIN_ID, PLUGIN_CLASS);
+}

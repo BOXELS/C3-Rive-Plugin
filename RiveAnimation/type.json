@@ -1,0 +1,47 @@
+{
+    "plugin": {
+        "behaviors": false,
+        "effectsType": "none",
+        "implements": ["IObjectBase"],
+        "objectType": "world",
+        "isRotatable": true,
+        "isResizable": true,
+        "hasImage": false,
+        "defaultImageURL": "",
+        "isTiled": false,
+        "isPlatform": false,
+        "canBePlaced": true,
+        "isDeprecated": false,
+        "info": {
+            "help": "A Rive animation object",
+            "notes": "Add Rive animations to your project",
+            "description": "Display and control Rive animations"
+        }
+    },
+    "instance": {
+        "properties": [
+            {
+                "type": "link",
+                "id": "rive-file",
+                "name": "Rive file",
+                "desc": "The .riv file to load",
+                "link-type": "external",
+                "default": ""
+            },
+            {
+                "type": "boolean",
+                "id": "autoplay",
+                "name": "Auto play",
+                "desc": "Automatically play the animation when loaded",
+                "default": true
+            },
+            {
+                "type": "boolean",
+                "id": "loop",
+                "name": "Loop",
+                "desc": "Loop the animation",
+                "default": true
+            }
+        ]
+    }
+} 

@@ -1,0 +1,40 @@
+{
+    "animation": {
+        "conditions": [
+            {
+                "id": "is-playing",
+                "scriptName": "IsPlaying",
+                "isTrigger": false,
+                "isStatic": false,
+                "highlight": false
+            }
+        ],
+        "actions": [
+            {
+                "id": "play",
+                "scriptName": "Play",
+                "isAsync": false,
+                "highlight": false
+            },
+            {
+                "id": "pause",
+                "scriptName": "Pause",
+                "isAsync": false,
+                "highlight": false
+            },
+            {
+                "id": "stop",
+                "scriptName": "Stop",
+                "isAsync": false,
+                "highlight": false
+            }
+        ],
+        "expressions": [
+            {
+                "id": "current-time",
+                "expressionName": "CurrentTime",
+                "returnType": "number"
+            }
+        ]
+    }
+} 

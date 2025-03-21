@@ -1,0 +1,34 @@
+{
+    "is-c3-addon": true,
+    "type": "plugin",
+    "name": "Rive Animation",
+    "id": "riveanimation",
+    "version": "1.0.3",
+    "author": "BOXELS",
+    "website": "https://rive.app",
+    "documentation": "README.md",
+    "description": "Add Rive animations to your Construct 3 project",
+    "editor-scripts": [
+        "addon.js"
+    ],
+    "runtime-scripts": [
+        "c3runtime/runtime.js"
+    ],
+    "file-list": [
+        "addon.js",
+        "addon.json",
+        "README.md",
+        "aces.json",
+        "lang/en-US.json",
+        "type.json",
+        "icon.svg",
+        "c3runtime/runtime.js"
+    ],
+    "category": "other",
+    "flags": {
+        "is-global": false
+    },
+    "plugin-info": {
+        "capabilities": []
+    }
+} 

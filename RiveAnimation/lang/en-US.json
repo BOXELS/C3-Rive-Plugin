@@ -1,0 +1,60 @@
+{
+    "languageTag": "en-US",
+    "fileDescription": "Strings for Rive Animation plugin",
+    "text": {
+        "plugins": {
+            "riveanimation": {
+                "name": "Rive Animation",
+                "description": "Add Rive animations to your Construct 3 project",
+                "help-url": "https://rive.app",
+                "aceCategories": {
+                    "animation": "Animation"
+                },
+                "properties": {
+                    "rive-file": {
+                        "name": "Rive File",
+                        "desc": "The name of the .riv file to use (e.g., singinghorses.riv)"
+                    },
+                    "autoplay": {
+                        "name": "Auto Play",
+                        "desc": "Should the animation play automatically when the layout starts?"
+                    },
+                    "loop": {
+                        "name": "Loop Animation",
+                        "desc": "Should the animation loop continuously?"
+                    }
+                },
+                "actions": {
+                    "play": {
+                        "list-name": "Play",
+                        "display-text": "Play animation",
+                        "description": "Play the animation"
+                    },
+                    "pause": {
+                        "list-name": "Pause",
+                        "display-text": "Pause animation",
+                        "description": "Pause the animation"
+                    },
+                    "stop": {
+                        "list-name": "Stop",
+                        "display-text": "Stop animation",
+                        "description": "Stop the animation"
+                    }
+                },
+                "conditions": {
+                    "is-playing": {
+                        "list-name": "Is playing",
+                        "display-text": "Is animation playing",
+                        "description": "Check if the animation is currently playing"
+                    }
+                },
+                "expressions": {
+                    "current-time": {
+                        "description": "Get the current time of the animation",
+                        "translated-name": "CurrentTime"
+                    }
+                }
+            }
+        }
+    }
+} 
